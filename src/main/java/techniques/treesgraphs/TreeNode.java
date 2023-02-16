@@ -9,4 +9,23 @@ public class TreeNode {
         this.val = val;
     }
 
+    public void setLeftNode(TreeNode leftNode) {
+        this.leftNode = leftNode;
+    }
+
+    public void setRightNode(TreeNode rightNode) {
+        this.rightNode = rightNode;
+    }
+
+    public TreeNode getLeftNode() {
+        return leftNode;
+    }
+
+    public TreeNode getRightNode() {
+        return rightNode;
+    }
+
+    public int getVal() {
+        return val;
+    }
 }
