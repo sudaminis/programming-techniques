@@ -25,7 +25,41 @@ public class DepthFirstSearch {
         root.setLeftNode(left1);
 
         dfs(root);
+        preOrderTraversal(root); //current, left, right
+        System.out.println("****************");
+        inOrderTraversal(root); //left, current, right
+        System.out.println("****************");
+        postOrderTraversal(root); //left, right, current
+        System.out.println("****************");
 
+    }
+
+    private static void preOrderTraversal(TreeNode root) {
+        if( root == null) {
+            return;
+        }
+        System.out.print(root.getVal() + ", ");
+        preOrderTraversal(root.getLeftNode());
+        preOrderTraversal(root.getRightNode());
+    }
+
+
+    private static void postOrderTraversal(TreeNode root) {
+        if( root == null ) {
+            return;
+        }
+        postOrderTraversal(root.getLeftNode());
+        postOrderTraversal(root.getRightNode());
+        System.out.print(root.getVal() + ", ");
+    }
+
+    private static void inOrderTraversal(TreeNode root) {
+        if( root == null ) {
+            return;
+        }
+        inOrderTraversal(root.getRightNode());
+        System.out.print(root.getVal() + ", ");
+        inOrderTraversal(root.getLeftNode());
     }
 
     private static void dfs(TreeNode node) {
@@ -34,6 +68,5 @@ public class DepthFirstSearch {
         }
         dfs( node.getRightNode());
         dfs( node.getLeftNode());
-        System.out.println("Value = " + node.getVal());
     }
 }
