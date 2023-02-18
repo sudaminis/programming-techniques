@@ -1,4 +1,4 @@
-package techniques.treesgraphs;
+package techniques.treesgraphs.trees;
 
 public class TreeNode {
     private int val;

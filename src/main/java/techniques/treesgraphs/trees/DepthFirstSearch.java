@@ -1,4 +1,4 @@
-package techniques.treesgraphs;
+package techniques.treesgraphs.trees;
 
 public class DepthFirstSearch {
     public static void main(String...args) {
