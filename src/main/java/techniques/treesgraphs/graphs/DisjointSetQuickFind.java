@@ -1,10 +1,14 @@
 package techniques.treesgraphs.graphs;
 
 /*
-Graph theory disjoint sets allows to define interconnection between vertices ( union )
-and then find which vertices are connected.
-QuickFind algorithm lets you find the interconnection in O[1].
-union take O[n]
+Note:
+N is the number of vertices in the graph.
+
+When initializing a union-find constructor, we need to create an array of size
+N with the values equal to the corresponding array indices; this requires linear time.
+Each call to find will require O(1) time since we are just accessing an element of the array at the given index.
+Each call to union will require O(N) time because we need to traverse through the entire array and update the root vertices for all the vertices of the set that is going to be merged into another set.
+The connected operation takes O(1) time since it involves the two find calls and the equality check operation.
  */
 public class DisjointSetQuickFind {
     int[] root;
