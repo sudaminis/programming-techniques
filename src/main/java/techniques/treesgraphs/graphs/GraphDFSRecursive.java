@@ -8,7 +8,7 @@ import java.util.Map;
 //Find if two nodes in a graph are connected
 // Use depth first search algorithm
 // its a bidirectional graph, so you have to put both edges from both vertices in the map
-public class GraphDFS {
+public class GraphDFSRecursive {
     public static void main(String...args) {
         int[][] edges = new int[][] {
           { 0, 1}, {0,2},{3,4},{3,5},{4,5}
@@ -18,6 +18,7 @@ public class GraphDFS {
 
     }
     public static boolean validPath(int n, int[][] edges, int source, int destination) {
+        //create a boolean
         boolean[] seen = new boolean[n];
         Map<Integer, List<Integer>> graph = new HashMap<>();
         for (int[] temp : edges) {
