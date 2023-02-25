@@ -7,10 +7,11 @@ import java.util.Map;
 
 //Find if two nodes in a graph are connected
 // Use depth first search algorithm
+// its a bidirectional graph, so you have to put both edges from both vertices in the map
 public class GraphDFS {
     public static void main(String...args) {
         int[][] edges = new int[][] {
-          { 0, 1}, {0,2},{1,3},{3,4},{3,5},{4,5}
+          { 0, 1}, {0,2},{3,4},{3,5},{4,5}
         };
         int vertices = 6;
         System.out.println(validPath(vertices, edges, 0, 5));
@@ -21,6 +22,7 @@ public class GraphDFS {
         Map<Integer, List<Integer>> graph = new HashMap<>();
         for (int[] temp : edges) {
             graph.computeIfAbsent(temp[0], val -> new ArrayList<>()).add(temp[1]);
+            graph.computeIfAbsent(temp[1], val -> new ArrayList<>()).add(temp[0]);
         }
         return dfs( seen, graph, source, destination);
     }
