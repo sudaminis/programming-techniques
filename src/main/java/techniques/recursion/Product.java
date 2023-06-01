@@ -1,4 +1,4 @@
-package mathbased;
+package techniques.recursion;
 
 public class Product {
     public  static void main(String...args) {

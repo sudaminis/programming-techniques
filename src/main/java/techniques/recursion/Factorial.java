@@ -1,4 +1,4 @@
-package mathbased;
+package techniques.recursion;
 
 public class Factorial {
     public static void main(String...args) {
