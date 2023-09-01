@@ -35,18 +35,23 @@ public class LRUCache {
         //1. create listnode using supplied parameters
         ListNode newNode = new ListNode(key,value);
 
-        //2. if the key already exists
+        //2. if the key already exists, then remove it
         if( dictionary.containsKey(key)) {
             ListNode oldNode = dictionary.get(key);
             remove(oldNode);
         }
+        //3. add new key -value to dictionary
         dictionary.put(key, newNode);
+        //4. add new node to linkedlist
         add(newNode);
 
         //5. if the capacity is greater than provided capacity, then delete first node.
-        ListNode nodeToBeDeleted = head.next;
-        remove(nodeToBeDeleted);
-        dictionary.remove(nodeToBeDeleted.key);
+        if( dictionary.size() > capacity ) {
+            ListNode nodeToBeDeleted = head.next;
+            remove(nodeToBeDeleted);
+            dictionary.remove(nodeToBeDeleted.key);
+        }
+
     }
 
     public void remove(ListNode node) {
