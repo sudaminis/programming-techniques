@@ -12,11 +12,11 @@ public class BestTimeToBuyAndSellStock {
 
     private static int maxProfitKadane(int[] arr) {
         int maxProfitSoFar = 0; // store max profit
-        int minPriceSoFar = Integer.MIN_VALUE; // store valley
+        int minPriceSoFar = Integer.MAX_VALUE; // store valley
         int currentMaxProfit;
 
         for (int j : arr) {
-            if (j > minPriceSoFar) {
+            if (j < minPriceSoFar) {
                 minPriceSoFar = j;
             } else {
                 currentMaxProfit = j - minPriceSoFar;
