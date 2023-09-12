@@ -1,0 +1,3 @@
+producer consumer pattern with Semaphore.
+Two semaphores to regulate producer and consumer threads
+Ensuring that each call to put() is followed by a call to get()
